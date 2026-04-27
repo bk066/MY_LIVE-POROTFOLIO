@@ -42,7 +42,6 @@ function CityNode({ position, name, desc, activity, active, onClick }: any) {
           <Text
             fontSize={0.3}
             color="#1A1A1A"
-            font="/fonts/Outfit-Bold.ttf" // Use a system font fallback if needed
             anchorX="center"
             anchorY="middle"
           >

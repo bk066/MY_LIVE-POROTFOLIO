@@ -18,6 +18,7 @@ const Observer = lazy(() => import('./pages/Observer'));
 const Contact = lazy(() => import('./pages/Contact'));
 const MapPage = lazy(() => import('./pages/Map'));
 const Terms = lazy(() => import('./pages/Terms'));
+const Privacy = lazy(() => import('./pages/Privacy'));
 const Security = lazy(() => import('./pages/Security'));
 
 function PageTransition({ children }: { children: React.ReactNode }) {
@@ -93,6 +94,7 @@ export default function App() {
                 <Route path="/map" element={<PageTransition><MapPage /></PageTransition>} />
                 <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
                 <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
+                <Route path="/privacy" element={<PageTransition><Privacy /></PageTransition>} />
                 <Route path="/security" element={<PageTransition><Security /></PageTransition>} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>

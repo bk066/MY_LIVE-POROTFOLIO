@@ -33,13 +33,6 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen selection:bg-brand-accent selection:text-white" onMouseMove={handleMouseMove}>
-      {/* 3D Background Layer */}
-      <div className="canvas-container noise-filter opacity-30 pointer-events-none">
-        <Suspense fallback={<ThreeSkeleton />}>
-          <Scene3D />
-        </Suspense>
-      </div>
-
       <div className="relative z-10">
         {/* Sticky Header Hero */}
         <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 relative overflow-hidden">

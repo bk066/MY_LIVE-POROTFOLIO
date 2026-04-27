@@ -198,8 +198,9 @@ export function Footer() {
            </div>
            
            <div className="flex items-center gap-8">
-              <NavLink to="/security" className="text-[10px] uppercase font-bold tracking-widest hover:text-brand-accent transition-colors">Security Architecture</NavLink>
-              <NavLink to="/terms" className="text-[10px] uppercase font-bold tracking-widest hover:text-brand-accent transition-colors">Terms of Engagement</NavLink>
+              <NavLink to="/privacy" className="text-[10px] uppercase font-bold tracking-widest hover:text-brand-accent transition-colors">Privacy Policy</NavLink>
+              <NavLink to="/terms" className="text-[10px] uppercase font-bold tracking-widest hover:text-brand-accent transition-colors">Terms</NavLink>
+              <NavLink to="/security" className="text-[10px] uppercase font-bold tracking-widest hover:text-brand-accent transition-colors">Security</NavLink>
            </div>
         </div>
       </div>
