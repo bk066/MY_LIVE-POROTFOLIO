@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { ShieldAlert, Eye, Lock, Database } from 'lucide-react';
 
 export default function Privacy() {
@@ -71,9 +72,11 @@ export default function Privacy() {
               <h3 className="text-3xl font-bold tracking-tight uppercase italic">Have Questions?</h3>
               <p className="opacity-60 max-w-sm">For specific inquiries regarding your data security or system protocols, please use the secure contact channel.</p>
            </div>
-           <button className="px-12 py-6 bg-brand-primary text-white rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-accent transition-colors">
-              Secure Inquiry
-           </button>
+           <Link to="/contact">
+             <button className="px-12 py-6 bg-brand-primary text-white rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-accent transition-colors">
+                Secure Inquiry
+             </button>
+           </Link>
         </div>
       </div>
     </div>

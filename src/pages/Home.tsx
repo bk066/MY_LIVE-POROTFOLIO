@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useTransform, useSpring } from 'motion/react';
 import { ArrowRight, ChevronDown, Monitor, Package, PlayCircle, GraduationCap, Sparkles } from 'lucide-react';
 import { KineticText } from '../components/AnimatedText';
@@ -62,26 +63,20 @@ export default function Home() {
                     className="hero-type italic text-brand-accent pr-4" 
                     tag="h1"
                   />
-                  <div className="pb-4 md:pb-12 max-w-sm flex items-center gap-6">
-                    <div className="w-[1px] h-12 bg-brand-accent/20" />
-                    <KineticText 
-                      text="DRIP." 
-                      className="text-4xl md:text-6xl font-black italic tracking-tighter text-[#1A1A1A]" 
-                      tag="h2"
-                    />
-                  </div>
                 </div>
               </div>
             </motion.div>
 
             <div className="flex flex-col md:flex-row gap-12 items-start mt-20">
-               <motion.button 
-                 whileHover={{ scale: 1.05 }}
-                 whileTap={{ scale: 0.95 }}
-                 className="px-12 py-6 bg-brand-accent text-brand-primary rounded-full font-bold text-xs uppercase tracking-[0.3em] flex items-center gap-6 group hover:bg-[#1A1A1A] hover:text-white transition-all shadow-[0_20px_40px_-15px_rgba(212,163,115,0.3)]"
-               >
-                 Enter the Ecosystem <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
-               </motion.button>
+               <Link to="/map">
+                 <motion.button 
+                   whileHover={{ scale: 1.05 }}
+                   whileTap={{ scale: 0.95 }}
+                   className="px-12 py-6 bg-brand-accent text-brand-primary rounded-full font-bold text-xs uppercase tracking-[0.3em] flex items-center gap-6 group hover:bg-[#1A1A1A] hover:text-white transition-all shadow-[0_20px_40px_-15px_rgba(212,163,115,0.3)]"
+                 >
+                   Enter the Ecosystem <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+                 </motion.button>
+               </Link>
                
                <div className="flex items-center gap-12 font-mono text-[9px] uppercase tracking-widest text-[#1A1A1A]/30">
                   <div className="flex flex-col gap-2">
@@ -182,61 +177,106 @@ export default function Home() {
 
         <ThinkingProcess />
 
-        {/* DRIP Production Section */}
-        <section className="py-60 px-6 md:px-12 bg-[#1A1A1A] relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10 pointer-events-none">
-             <div className="absolute top-0 left-0 w-full h-full architect-grid scale-150 rotate-12" />
+        {/* DRIP Production Section - Rewritten for High Impact */}
+        <section className="py-60 px-6 md:px-12 bg-[#0A0A0A] relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+             <div className="absolute top-[-10%] left-[-10%] w-[120%] h-[120%] architect-grid opacity-5 rotate-3" />
+             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-brand-accent/5 rounded-full blur-[200px]" />
           </div>
           
           <div className="max-w-[1800px] mx-auto relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
-              <div className="space-y-12">
-                 <div className="flex items-center gap-4">
-                    <div className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
-                    <span className="text-meta !text-brand-accent">Live Protocol // Drip.exe</span>
-                 </div>
-                 
-                 <h2 className="text-white text-display text-6xl md:text-[10rem] leading-[0.8] tracking-tighter">
-                   Redefining <br />
-                   <span className="italic font-light opacity-30">Party Culture.</span>
-                 </h2>
-                 
-                 <div className="max-w-xl space-y-8">
-                    <p className="text-2xl text-white/50 font-light leading-relaxed">
-                      From elite nightlife to massive music events. We architect the energy that defines the next generation of entertainment.
-                    </p>
-                    <div className="flex gap-8 items-center border-t border-white/10 pt-8">
-                       <div className="space-y-1">
-                          <p className="font-mono text-[10px] text-brand-accent uppercase tracking-widest">Atmosphere</p>
-                          <p className="text-white font-bold">Exclusive Vibes</p>
-                       </div>
-                       <div className="w-px h-8 bg-white/10" />
-                       <div className="space-y-1">
-                          <p className="font-mono text-[10px] text-brand-accent uppercase tracking-widest">Dynamic</p>
-                          <p className="text-white font-bold">Limitless Energy</p>
-                       </div>
-                    </div>
-                 </div>
+            <div className="flex flex-col gap-24 font-display">
+              {/* Massive Header */}
+              <div className="relative">
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <span className="text-meta !text-brand-accent mb-8 inline-block tracking-[0.5em]">SYSTEM_DRIP // PRODUCTION_LAB</span>
+                  <h2 className="text-white text-[12vw] md:text-[15rem] leading-[0.75] font-black italic tracking-tighter uppercase whitespace-nowrap overflow-hidden">
+                    STAY <span className="text-brand-accent">AHEAD</span>
+                  </h2>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex justify-end"
+                >
+                  <h2 className="text-white/20 text-[12vw] md:text-[15rem] leading-[0.75] font-black italic tracking-tighter uppercase">
+                    STAY <span className="outline-text-white opacity-40">DRIP.</span>
+                  </h2>
+                </motion.div>
               </div>
 
-              <div className="relative aspect-video rounded-[3rem] overflow-hidden border border-white/10 group">
-                 <img 
-                   src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1200" 
-                   alt="Nightlife Energy" 
-                   className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110"
-                 />
-                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent" />
-                 <div className="absolute bottom-12 left-12 right-12">
-                    <div className="glass-card bg-white/5 p-8 rounded-3xl backdrop-blur-xl border-white/10 flex justify-between items-center">
-                       <div className="space-y-2">
-                          <h4 className="text-white font-black italic tracking-tighter text-2xl uppercase">Stay Ahead. Stay DRIP.</h4>
-                          <p className="text-white/40 text-[10px] font-mono tracking-widest uppercase">Party Entertainment Service</p>
-                       </div>
-                       <button className="w-16 h-16 rounded-full bg-brand-accent text-brand-primary flex items-center justify-center hover:scale-110 transition-transform">
-                          <ArrowRight size={24} />
-                       </button>
+              {/* Grid Content */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-32 items-start mt-20">
+                <div className="lg:col-span-5 space-y-16">
+                  <div className="space-y-8">
+                    <p className="text-3xl md:text-5xl text-white font-light leading-snug">
+                      We don't just host events. We architect <span className="font-bold italic">cultural energy.</span>
+                    </p>
+                    <p className="text-xl text-white/40 leading-relaxed max-w-xl">
+                      DRIP is a high-fidelity entertainment ecosystem specializing in elite nightlife, immersive festivals, and massive music experiences. We bridge the gap between digital precision and raw human energy.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-8 pt-16 border-t border-white/10">
+                    {[
+                      { label: "PROTOCOL", val: "Elite Nightlife" },
+                      { label: "SCALE", val: "Massive Festivals" },
+                      { label: "DNA", val: "High Fidelity" },
+                      { label: "STATUS", val: "Active System" }
+                    ].map((stat, i) => (
+                      <div key={i} className="space-y-2">
+                        <p className="font-mono text-[9px] text-brand-accent uppercase tracking-widest">{stat.label}</p>
+                        <p className="text-white text-lg font-bold">{stat.val}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link to="/contact" className="w-full md:w-auto">
+                    <motion.button 
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="w-full md:w-auto px-16 py-8 bg-brand-accent text-brand-primary font-black uppercase italic tracking-widest text-sm hover:bg-white transition-colors"
+                    >
+                      View Project Dossier
+                    </motion.button>
+                  </Link>
+                </div>
+
+                <div className="lg:col-span-7 relative group">
+                  <div className="absolute -inset-4 bg-brand-accent/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-sm grayscale group-hover:grayscale-0 transition-all duration-1000 border border-white/10">
+                    <img 
+                      src="https://images.unsplash.com/photo-1514525253361-bee8718a74a2?auto=format&fit=crop&q=80&w=1200" 
+                      alt="DRIP Event Environment" 
+                      className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-[2s]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-80" />
+                    
+                    {/* Floating HUD Elements */}
+                    <div className="absolute top-8 left-8 flex gap-4">
+                      <div className="px-4 py-2 bg-brand-accent text-brand-primary font-mono text-[9px] font-bold">LIVE_ENERGY_METRIC: 98%</div>
+                      <div className="px-4 py-2 bg-white/10 backdrop-blur-md text-white font-mono text-[9px] font-bold">ATMOSPHERE: CRITICAL</div>
                     </div>
-                 </div>
+
+                    <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
+                      <div className="space-y-2">
+                        <h4 className="text-3xl text-white font-black italic uppercase tracking-tighter">Event Prototype_04</h4>
+                        <p className="text-white/40 font-mono text-[10px] tracking-widest">SURAT // 2024</p>
+                      </div>
+                      <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white">
+                         <PlayCircle size={20} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -282,9 +322,11 @@ export default function Home() {
                        <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-brand-accent" /> Global SEO Optimization</li>
                     </ul>
 
-                    <button className="w-full py-6 bg-white text-[#1A1A1A] rounded-3xl font-bold text-xs uppercase tracking-widest hover:bg-brand-accent transition-colors flex items-center justify-center gap-4">
-                       Start Project <ArrowRight size={14} />
-                    </button>
+                    <Link to="/contact">
+                      <button className="w-full py-6 bg-white text-[#1A1A1A] rounded-3xl font-bold text-xs uppercase tracking-widest hover:bg-brand-accent transition-colors flex items-center justify-center gap-4">
+                         Start Project <ArrowRight size={14} />
+                      </button>
+                    </Link>
                     
                     <div className="absolute inset-0 bg-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                  </motion.div>

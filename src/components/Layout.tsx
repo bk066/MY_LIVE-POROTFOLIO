@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { Github, Linkedin, Mail, ChevronRight, MapPin, Menu, X, Share2, ArrowUpRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { useState, useEffect } from 'react';
-import LiveHub from './ui/LiveHub';
 
 export function Navigation() {
   const [isHovered, setIsHovered] = useState(false);
@@ -119,8 +118,6 @@ export function Footer() {
       <div className="absolute inset-0 opacity-5 pointer-events-none architect-grid" />
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-accent to-transparent" />
       
-      <LiveHub />
-
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
           <div className="lg:col-span-12 space-y-8 mb-12">
@@ -184,9 +181,11 @@ export function Footer() {
                 <p className="text-xs opacity-30 mt-2">GMT+5:30 — Surat, IN</p>
              </div>
              
-             <button className="px-8 py-4 bg-brand-accent text-brand-primary font-bold rounded-full text-xs uppercase tracking-widest hover:scale-105 transition-transform">
-                Request Connection
-             </button>
+             <NavLink to="/contact">
+                <button className="px-8 py-4 bg-brand-accent text-brand-primary font-bold rounded-full text-xs uppercase tracking-widest hover:scale-105 transition-transform">
+                   Request Connection
+                </button>
+             </NavLink>
           </div>
         </div>
 

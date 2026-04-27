@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { Scale, FileText, Globe, CheckCircle2 } from 'lucide-react';
 
 export default function Terms() {
@@ -67,9 +68,11 @@ export default function Terms() {
                    <p className="text-sm opacity-60 leading-relaxed font-light">
                       Access the complete architectural whitepaper and compliance documentation in PDF format.
                    </p>
-                   <button className="w-full py-4 bg-brand-primary text-white text-xs font-bold uppercase tracking-[0.2em] rounded-2xl hover:scale-105 transition-transform">
-                      Request PDF
-                   </button>
+                   <Link to="/contact">
+                      <button className="w-full py-4 bg-brand-primary text-white text-xs font-bold uppercase tracking-[0.2em] rounded-2xl hover:scale-105 transition-transform">
+                         Request PDF
+                      </button>
+                   </Link>
                 </div>
              </div>
           </div>

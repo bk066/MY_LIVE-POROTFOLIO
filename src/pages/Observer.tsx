@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { Activity, Eye, Search, AlertCircle, CheckCircle, BarChart3, Fingerprint, Radar } from 'lucide-react';
 import { KineticText } from '../components/AnimatedText';
 
@@ -82,9 +83,11 @@ export default function Observer() {
                        </div>
                     </div>
                     
-                    <button className="w-full py-8 bg-white text-brand-primary rounded-[2rem] font-bold text-xs uppercase tracking-widest hover:bg-brand-accent transition-colors flex items-center justify-center gap-4 group">
-                       Initialize Full Audit <Activity size={16} className="group-hover:rotate-12 transition-transform" />
-                    </button>
+                    <Link to="/contact">
+                      <button className="w-full py-8 bg-white text-brand-primary rounded-[2rem] font-bold text-xs uppercase tracking-widest hover:bg-brand-accent transition-colors flex items-center justify-center gap-4 group">
+                         Initialize Full Audit <Activity size={16} className="group-hover:rotate-12 transition-transform" />
+                      </button>
+                    </Link>
                  </div>
               </div>
            </div>

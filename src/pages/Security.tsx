@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Shield, Lock, Eye, Server, RefreshCw, Key } from 'lucide-react';
+import { Shield, Lock, Eye, Server, RefreshCw, Key, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Security() {
   const securityFeatures = [
@@ -92,6 +93,13 @@ export default function Security() {
                ))}
             </div>
           </div>
+        </div>
+        <div className="mt-20 flex justify-center">
+          <Link to="/contact">
+            <button className="px-16 py-8 bg-brand-primary text-white rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand-accent transition-colors flex items-center gap-6 group">
+              Request Security Audit <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Terminal, Database, Globe, Layers, Code, Cpu, Server, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Terminal, Database, Globe, Layers, Code, Cpu, Server, Shield, ArrowUpRight } from 'lucide-react';
 import { KineticText } from '../components/AnimatedText';
 
 const techStack = [
@@ -95,9 +96,11 @@ export default function Technical() {
                  <p className="text-lg font-light text-[#1A1A1A]/60 leading-relaxed">
                    Looking beyond the browser. Visualizing the entire stack as a living, breathing digital organism.
                  </p>
-                 <button className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-[#1A1A1A] group">
-                    Explore Infrastructure <Code size={14} className="group-hover:translate-x-2 transition-transform" />
-                 </button>
+                 <Link to="/contact">
+                   <button className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-[#1A1A1A] group">
+                      Explore Infrastructure <Code size={14} className="group-hover:translate-x-2 transition-transform" />
+                   </button>
+                 </Link>
               </div>
            </div>
         </div>
@@ -146,34 +149,36 @@ function ProjectBlock({ title, category, desc, tags, src }: any) {
   return (
     <motion.div 
       whileHover={{ y: -10 }}
-      className="glass-card rounded-[4rem] group overflow-hidden border-0"
+      className="glass-card rounded-[4rem] group overflow-hidden border-0 cursor-pointer"
     >
-       <div className="relative h-[500px] overflow-hidden">
-          <img 
-            src={src} 
-            alt={title} 
-            className="w-full h-full object-cover transition-transform duration-[2s] scale-105 group-hover:scale-110" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent opacity-60" />
-          
-          <div className="absolute bottom-12 left-12 right-12 flex justify-between items-end">
-             <div className="space-y-4">
-                <span className="text-meta !text-white/60 tracking-[0.8em]">{category}</span>
-                <h3 className="text-4xl text-white font-black tracking-tight">{title}</h3>
-             </div>
-             <div className="w-16 h-16 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center -rotate-45 group-hover:rotate-0 transition-transform duration-500">
-                <Globe size={24} />
-             </div>
-          </div>
-       </div>
-       <div className="p-12 space-y-8 bg-white">
-          <p className="text-lg text-[#1A1A1A]/50 font-light leading-relaxed">{desc}</p>
-          <div className="flex flex-wrap gap-2">
-             {tags.map((tag: string) => (
-               <span key={tag} className="px-6 py-2 rounded-full bg-[#1A1A1A]/5 text-[9px] font-mono font-bold uppercase tracking-widest text-[#1A1A1A]/40">{tag}</span>
-             ))}
-          </div>
-       </div>
+       <Link to="/contact">
+         <div className="relative h-[500px] overflow-hidden">
+            <img 
+              src={src} 
+              alt={title} 
+              className="w-full h-full object-cover transition-transform duration-[2s] scale-105 group-hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent opacity-60" />
+            
+            <div className="absolute bottom-12 left-12 right-12 flex justify-between items-end">
+               <div className="space-y-4">
+                  <span className="text-meta !text-white/60 tracking-[0.8em]">{category}</span>
+                  <h3 className="text-4xl text-white font-black tracking-tight">{title}</h3>
+               </div>
+               <div className="w-16 h-16 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center -rotate-45 group-hover:rotate-0 transition-transform duration-500">
+                  <ArrowUpRight size={24} />
+               </div>
+            </div>
+         </div>
+         <div className="p-12 space-y-8 bg-white">
+            <p className="text-lg text-[#1A1A1A]/50 font-light leading-relaxed">{desc}</p>
+            <div className="flex flex-wrap gap-2">
+               {tags.map((tag: string) => (
+                 <span key={tag} className="px-6 py-2 rounded-full bg-[#1A1A1A]/5 text-[9px] font-mono font-bold uppercase tracking-widest text-[#1A1A1A]/40">{tag}</span>
+               ))}
+            </div>
+         </div>
+       </Link>
     </motion.div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { ShoppingBag, Box, TrendingUp, Calendar, ChevronRight, Activity, Users, Target, BarChart, BookOpen, Truck } from 'lucide-react';
 import { KineticText } from '../components/AnimatedText';
 import { CareerTimeline } from '../components/CareerTimeline';
@@ -103,9 +104,11 @@ export default function Business() {
                       Elite tutoring module for Accountancy and Economics. Scaling academic performance through first-principles logic.
                     </p>
                  </div>
-                 <button className="w-full py-4 border border-[#1A1A1A]/10 rounded-2xl font-mono text-[9px] font-black tracking-widest hover:bg-brand-primary hover:text-white transition-all uppercase">
-                   Access Rank Module
-                 </button>
+                 <Link to="/contact">
+                   <button className="w-full py-4 border border-[#1A1A1A]/10 rounded-2xl font-mono text-[9px] font-black tracking-widest hover:bg-brand-primary hover:text-white transition-all uppercase">
+                     Access Rank Module
+                   </button>
+                 </Link>
               </div>
            </div>
         </div>
