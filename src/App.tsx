@@ -7,7 +7,7 @@ import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import LoadingSequence from './components/LoadingSequence';
-import { Navigation, Footer } from './components/Layout';
+import { Navigation, Footer, ScrollProgress } from './components/Layout';
 import Scene3D from './components/Scene3D';
 
 // Lazy load pages for performance
@@ -17,6 +17,8 @@ const Business = lazy(() => import('./pages/Business'));
 const Observer = lazy(() => import('./pages/Observer'));
 const Contact = lazy(() => import('./pages/Contact'));
 const MapPage = lazy(() => import('./pages/Map'));
+const Terms = lazy(() => import('./pages/Terms'));
+const Security = lazy(() => import('./pages/Security'));
 
 function PageTransition({ children }: { children: React.ReactNode }) {
   const location = useLocation();
@@ -79,6 +81,7 @@ export default function App() {
         </div>
 
         <div className="relative z-10 flex flex-col min-h-screen">
+          <ScrollProgress />
           <Navigation />
           <main className="flex-grow">
             <Suspense fallback={<div className="h-screen flex items-center justify-center font-mono text-[10px] tracking-widest text-slate-300">LOADING...</div>}>
@@ -89,6 +92,8 @@ export default function App() {
                 <Route path="/observer" element={<PageTransition><Observer /></PageTransition>} />
                 <Route path="/map" element={<PageTransition><MapPage /></PageTransition>} />
                 <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+                <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
+                <Route path="/security" element={<PageTransition><Security /></PageTransition>} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </Suspense>

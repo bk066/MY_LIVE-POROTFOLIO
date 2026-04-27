@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useScroll, useSpring } from 'motion/react';
 import { NavLink } from 'react-router-dom';
 import { Github, Linkedin, Mail, ChevronRight, MapPin, Menu, X, Share2, ArrowUpRight } from 'lucide-react';
 import { cn } from '../lib/utils';
@@ -198,12 +198,41 @@ export function Footer() {
            </div>
            
            <div className="flex items-center gap-8">
-              <a href="#" className="text-[10px] uppercase font-bold tracking-widest hover:text-brand-accent transition-colors">Privacy Module</a>
-              <a href="#" className="text-[10px] uppercase font-bold tracking-widest hover:text-brand-accent transition-colors">System Analytics</a>
+              <NavLink to="/security" className="text-[10px] uppercase font-bold tracking-widest hover:text-brand-accent transition-colors">Security Architecture</NavLink>
+              <NavLink to="/terms" className="text-[10px] uppercase font-bold tracking-widest hover:text-brand-accent transition-colors">Terms of Engagement</NavLink>
            </div>
         </div>
       </div>
     </footer>
+  );
+}
+
+export function ScrollProgress() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  return (
+    <motion.div
+      className="fixed top-0 left-0 right-0 h-0.5 bg-brand-accent origin-left z-[200]"
+      style={{ scaleX }}
+    />
+  );
+}
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="relative min-h-screen bg-[#F9F9F7] selection:bg-brand-accent selection:text-brand-primary">
+      <ScrollProgress />
+      <Navigation />
+      <main className="relative z-10">
+        {children}
+      </main>
+      <Footer />
+    </div>
   );
 }
 

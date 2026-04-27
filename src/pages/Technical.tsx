@@ -115,6 +115,13 @@ export default function Technical() {
 
            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <ProjectBlock 
+                title="DRIP Production"
+                category="Entertainment Architecture"
+                desc="Redefining party culture through high-fidelity digital logistics and immersive event curation. From elite nightlife to massive music events."
+                tags={['Event Ops', 'Cultural Logic', 'Creative Direction']}
+                src="https://images.unsplash.com/photo-1514525253361-bee8718a74a2?auto=format&fit=crop&q=80&w=1200"
+              />
+              <ProjectBlock 
                 title="Hunger's Home"
                 category="Full-Stack Web App"
                 desc="A high-performance digital ecosystem designed for scale. Featuring robust DB architecture and fluid R3F visual modules."

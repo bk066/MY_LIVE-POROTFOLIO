@@ -66,13 +66,16 @@ export default function Home() {
                 <div className="flex flex-col md:flex-row md:items-end gap-8">
                   <KineticText 
                     text="Jalan." 
-                    className="hero-type italic text-brand-accent" 
+                    className="hero-type italic text-brand-accent pr-4" 
                     tag="h1"
                   />
-                  <div className="pb-4 md:pb-12 max-w-sm">
-                    <p className="text-xl font-light leading-snug text-[#1A1A1A]/60">
-                      Architecting high-performance digital ecosystems through <span className="text-[#1A1A1A] font-medium">operational logic</span> and visual fidelity.
-                    </p>
+                  <div className="pb-4 md:pb-12 max-w-sm flex items-center gap-6">
+                    <div className="w-[1px] h-12 bg-brand-accent/20" />
+                    <KineticText 
+                      text="DRIP." 
+                      className="text-4xl md:text-6xl font-black italic tracking-tighter text-[#1A1A1A]" 
+                      tag="h2"
+                    />
                   </div>
                 </div>
               </div>
@@ -82,9 +85,9 @@ export default function Home() {
                <motion.button 
                  whileHover={{ scale: 1.05 }}
                  whileTap={{ scale: 0.95 }}
-                 className="px-12 py-6 bg-[#1A1A1A] text-white rounded-full font-bold text-xs uppercase tracking-[0.3em] flex items-center gap-6 group hover:bg-brand-accent transition-colors"
+                 className="px-12 py-6 bg-brand-accent text-brand-primary rounded-full font-bold text-xs uppercase tracking-[0.3em] flex items-center gap-6 group hover:bg-[#1A1A1A] hover:text-white transition-all shadow-[0_20px_40px_-15px_rgba(212,163,115,0.3)]"
                >
-                 View Architecture <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+                 Enter the Ecosystem <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
                </motion.button>
                
                <div className="flex items-center gap-12 font-mono text-[9px] uppercase tracking-widest text-[#1A1A1A]/30">
@@ -185,6 +188,66 @@ export default function Home() {
         </section>
 
         <ThinkingProcess />
+
+        {/* DRIP Production Section */}
+        <section className="py-60 px-6 md:px-12 bg-[#1A1A1A] relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+             <div className="absolute top-0 left-0 w-full h-full architect-grid scale-150 rotate-12" />
+          </div>
+          
+          <div className="max-w-[1800px] mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+              <div className="space-y-12">
+                 <div className="flex items-center gap-4">
+                    <div className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
+                    <span className="text-meta !text-brand-accent">Live Protocol // Drip.exe</span>
+                 </div>
+                 
+                 <h2 className="text-white text-display text-6xl md:text-[10rem] leading-[0.8] tracking-tighter">
+                   Redefining <br />
+                   <span className="italic font-light opacity-30">Party Culture.</span>
+                 </h2>
+                 
+                 <div className="max-w-xl space-y-8">
+                    <p className="text-2xl text-white/50 font-light leading-relaxed">
+                      From elite nightlife to massive music events. We architect the energy that defines the next generation of entertainment.
+                    </p>
+                    <div className="flex gap-8 items-center border-t border-white/10 pt-8">
+                       <div className="space-y-1">
+                          <p className="font-mono text-[10px] text-brand-accent uppercase tracking-widest">Atmosphere</p>
+                          <p className="text-white font-bold">Exclusive Vibes</p>
+                       </div>
+                       <div className="w-px h-8 bg-white/10" />
+                       <div className="space-y-1">
+                          <p className="font-mono text-[10px] text-brand-accent uppercase tracking-widest">Dynamic</p>
+                          <p className="text-white font-bold">Limitless Energy</p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+
+              <div className="relative aspect-video rounded-[3rem] overflow-hidden border border-white/10 group">
+                 <img 
+                   src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1200" 
+                   alt="Nightlife Energy" 
+                   className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-110"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent" />
+                 <div className="absolute bottom-12 left-12 right-12">
+                    <div className="glass-card bg-white/5 p-8 rounded-3xl backdrop-blur-xl border-white/10 flex justify-between items-center">
+                       <div className="space-y-2">
+                          <h4 className="text-white font-black italic tracking-tighter text-2xl uppercase">Stay Ahead. Stay DRIP.</h4>
+                          <p className="text-white/40 text-[10px] font-mono tracking-widest uppercase">Party Entertainment Service</p>
+                       </div>
+                       <button className="w-16 h-16 rounded-full bg-brand-accent text-brand-primary flex items-center justify-center hover:scale-110 transition-transform">
+                          <ArrowRight size={24} />
+                       </button>
+                    </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Hero Service Section */}
         <section className="py-40 bg-[#1A1A1A] text-white relative overflow-hidden">
